@@ -6,6 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:pie_chart/pie_chart.dart';
 
 import '../utilis/reusable_row.dart';
+import 'country_list_screen.dart';
 
 class WorldStates extends StatefulWidget {
   const WorldStates({Key? key}) : super(key: key);
@@ -112,7 +113,14 @@ class _WorldStatesState extends State<WorldStates>
                           ),
                         ),
                         MyButton(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const CountryListScreen(),
+                              ),
+                            );
+                          },
                           title: 'Track Counteries',
                         ),
                       ],

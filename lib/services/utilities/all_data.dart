@@ -16,4 +16,17 @@ class WorldSatesData {
       throw Exception('Error');
     }
   }
+
+  Future<List<dynamic>> fetchCountries() async {
+    var data;
+    final response = await http.get(
+      Uri.parse(AppUrl.countriesList),
+    );
+    if (response.statusCode == 200) {
+      data = jsonDecode(response.body.toString());
+      return data;
+    } else {
+      throw Exception('Error');
+    }
+  }
 }
